@@ -1,0 +1,42 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+#setwd=("humann_db_output_counts/")
+
+library(Maaslin2)
+library(tidyverse)
+
+
+df_input_data.cal = read.table(file ="bacterioma_pathways.cleaned.transpose.dummy.tsv", dec = ".", header = TRUE,  sep = "\t") 
+
+df_input_data.cal=as_tibble(df_input_data.cal)
+
+df_input_metadata.cal = read.table(file = "/Users/joannamalukiewicz/Dropbox/Documents/Projects/GENOMICA/merged/sample_information.tsv",  header = TRUE, sep = "\t")
+
+
+tmp_data = tempfile(pattern = "data")
+write_delim(df_input_data.cal, tmp_data, delim = "\t")
+
+
+tmp_metadata = tempfile(pattern = "metadata")
+write_delim(df_input_metadata.cal, tmp_metadata, delim = "\t")
+
+
+#df <- df_input_data[df_input_data > 0]
+
+
+#df_input_data=as_tibble(df_input_data)
+
+
+#df <- df[df > 0]
+
+fit_data2 = Maaslin2(
+    tmp_data, 
+    tmp_metadata, 
+    output = "humann", 
+    fixed_effects = c("ENV_BIOME","Scientific_name"))
+
+```
