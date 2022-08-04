@@ -1,0 +1,69 @@
+Host Taxon	Bacterial Genus	Average Absolute Normalised Counts	Average Relative Normalised Abundance
+ Callithrix    	" 	g__Serratia              "	1015	0,120449486630048
+ Callithrix    	" 	g__Erysipelatoclostridium"	828	0,0982583004233295
+ Callithrix    	" 	g__Phreatobacter         "	778	0,0923248281755439
+ Callithrix    	" 	g__Paraburkholderia      "	697	0,0827126031341312
+ Callithrix    	" 	g__Leuconostoc           "	681	0,0808138920148399
+ Callithrix    	" 	g__Pseudomonas           "	680	0,0806952225698841
+ Callithrix    	" 	g__Ralstonia             "	617	0,0732190475376743
+ Callithrix    	" 	g__Escherichia           "	550	0,0652681947256416
+ Callithrix    	" 	g__Ewingella             "	528	0,0626574669366159
+ Callithrix    	" 	g__Burkholderia"	415	0,0492478196566205
+ Callithrix    	" 	g__Streptococcus         "	375	0,044501041858392
+ Callithrix    	" 	g__Enterococcus          "	258	0,0306167167985737
+ Callithrix    	" 	g__Lactobacillus         "	255	0,0302607084637066
+ Callithrix    	" 	g__Bifidobacterium       "	217	0,0257512695553895
+ Callithrix    	" 	g__Kluyvera              "	144	0,0170884000736225
+ Callithrix    	" 	g__Lactococcus           "	89,4	0,0106090483790407
+ Callithrix    	" 	g__Roseburia             "	88,2	0,0104666450450938
+ Callithrix    	" 	g__Citrobacter           "	66,8	0,00792711892304156
+ Callithrix    	" 	g__Prevotella            "	30,9	0,0036668858491315
+ Callithrix    	" 	g__Weissella             "	25,9	0,00307353862435294
+ Callithrix    	" 	g__Bacillus              "	24,7	0,00293113529040609
+ Callithrix    	" 	g__Collinsella           "	21,4	0,00253952612205224
+ Callithrix    	" 	g__Bacteroides           "	12,7	0,00150710195093754
+ Callithrix    	" 	g__Hafnia                "	12	0,00142403333946854
+ Callithrix    	" 	g__Akkermansia           "	11,1	0,0013172308390084
+ Callithrix    	" 	g__Barnesiella           "	4,78	0,000567239946888303
+ Callithrix    	" 	g__Blautia               "	0,889	0,000105497136565628
+ Callithrix    	" 	g__Enorma                "	0	0
+ Callithrix    	" 	g__Malassezia            "	0	0
+ Callithrix    	" 	g__Megamonass            "	0	0
+ Callithrix    	" 	g__Olsenella             "	0	0
+ Callithrix    	" 	g__Stenotrophomonass     "	0	0
+ Callithrix    	" 	g__Sutterella            "	0	0
+	Callithrix Total	8426,769	
+Leontopithecus 	"	g__Stenotrophomonas        "	2790	0,346454737364957
+ Leontopithecus	" 	g__Malassezia            "	1395	0,173227368682479
+ Leontopithecus	" 	g__Streptococcus         "	1161	0,144169874580902
+ Leontopithecus	" 	g__Prevotella            "	853	0,105923258413014
+ Leontopithecus	" 	g__Bifidobacterium       "	512	0,0635787905128524
+ Leontopithecus	" 	g__Sutterella            "	317	0,0393642120948715
+ Leontopithecus	" 	g__Olsenella             "	271	0,0336520551347324
+ Leontopithecus	" 	g__Erysipelatoclostridium"	230	0,0285607848006954
+ Leontopithecus	" 	g__Enorma                "	209	0,0259530609710667
+ Leontopithecus	" 	g__Collinsella           "	183	0,0227244505153359
+ Leontopithecus	" 	g__Megamonas             "	132	0,0163914069290947
+ Leontopithecus	" 	g__Weissella             "	0	0
+ Leontopithecus	" 	g__Serratia              "	0	0
+ Leontopithecus	" 	g__Roseburia             "	0	0
+ Leontopithecus	" 	g__Ralstonia             "	0	0
+ Leontopithecus	" 	g__Pseudomonas           "	0	0
+ Leontopithecus	" 	g__Phreatobacter         "	0	0
+ Leontopithecus	" 	g__Paraburkholderia      "	0	0
+ Leontopithecus	" 	g__Leuconostoc           "	0	0
+ Leontopithecus	" 	g__Lactococcus           "	0	0
+ Leontopithecus	" 	g__Lactobacillus         "	0	0
+ Leontopithecus	" 	g__Kluyvera              "	0	0
+ Leontopithecus	" 	g__Hafnia                "	0	0
+ Leontopithecus	" 	g__Ewingella             "	0	0
+ Leontopithecus	" 	g__Escherichia           "	0	0
+ Leontopithecus	" 	g__Enterococcus          "	0	0
+ Leontopithecus	" 	g__Citrobacter           "	0	0
+ Leontopithecus	" 	g__Burkholderia          "	0	0
+ Leontopithecus	" 	g__Blautia               "	0	0
+ Leontopithecus	" 	g__Barnesiella           "	0	0
+ Leontopithecus	" 	g__Bacteroides           "	0	0
+ Leontopithecus	" 	g__Bacillus              "	0	0
+ Leontopithecus	" 	g__Akkermansia           "	0	0
+	Leontopithecus Total	8053	
