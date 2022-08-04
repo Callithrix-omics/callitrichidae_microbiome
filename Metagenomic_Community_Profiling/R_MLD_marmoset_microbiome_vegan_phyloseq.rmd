@@ -1,1 +1,181 @@
+---
+title: "MLD and Callithrix gut RNAseq pool metagenomic analysis"
+output: html_notebook
+---
+
+
+
+```{r phyloseq}
+#follows http://deneflab.github.io/MicrobeMiseq/demos/mothur_2_phyloseq.html
+
+
+library(dplyr)
+library(ggplot2)
+library(vegan)
+library(phyloseq)
+library(RColorBrewer)
+library(EcolUtils)
+
+#data import 
+### code based on https://vaulot.github.io/tutorials/Phyloseq_tutorial.html
+
+#create phyloseq object
+
+otu_mat=read.table("phyloseq_OTU.tsv",header=TRUE)
+
+#phyloseq objects need to have row.names, define the row names from the otu column
+
+otu_mat <- otu_mat %>%
+    tibble::column_to_rownames("OTUID") 
+
+ tax_mat=read.table("phyloseq_taxaonomy.tsv",header=TRUE, sep="\t")
+
+ tax_mat <- tax_mat %>% 
+    tibble::column_to_rownames("OTUID")
+ 
+ samples_df=read.table("sample_information.tsv",header=TRUE, sep="\t")
+ 
+ samples_df <- samples_df %>% 
+    tibble::column_to_rownames("HostID")
+ 
+#transform into matrixes out and tax table 
+ 
+otu_mat <- as.matrix(otu_mat)
+  tax_mat <- as.matrix(tax_mat)
+  
+#transform to phloseq objects 
+OTU = otu_table(otu_mat, taxa_are_rows = TRUE)
+TAX = tax_table(tax_mat)
+samples = sample_data(samples_df)
+  
+marmo <- phyloseq(OTU, TAX, samples)
+
+#normalize number of reads in each sample using median sequencing depth 
+
+total = median(sample_sums(marmo))
+
+standf = function(x, t=total) round(t * (x / sum(x)))
+marmo = transform_sample_counts(marmo, standf) 
+
+#p=plot_bar(marmo, fill = "Genus")
+
+
+#p=plot_bar(marmo, fill = "Genus") + facet_wrap(~Scientific_name , scales = "free_x", nrow = 1)
+ 
+
+#build nicer abundance plot 
+getPalette = colorRampPalette(brewer.pal(100, "Set1")) 
+PhylaPalette = getPalette(55)
+
+#get the data frame from the phyloseq object
+pd <- psmelt(marmo)
+
+p=barchart_palette <- ggplot(pd, aes(x = Sample, y = Abundance, factor(Species), fill = factor(Species))) + geom_bar(stat = "identity") + scale_fill_manual(values = PhylaPalette) + guides(fill=guide_legend(ncol=2)) +facet_wrap(~Scientific_name, scales = "free_x")
+
+p
+
+
+
+#make alpha diveristy divesity plots
+
+
+ 
+ob.plot_host_env=plot_richness(marmo, x="ENV_BIOME", color="ENV_BIOME", measures=c("Shannon")) + geom_boxplot()
+ 
+ob.plot_host_genus=plot_richness(marmo, x="sample_Genus", color="sample_Genus", measures=c("Shannon")) + geom_boxplot()
+
+
+
+
+```
+
+```{r anova Shannon}
+
+library(rstatix)
+
+# convert the sample_data() within a phyloseq object to a vegan compatible data object
+
+pssd2veg <- function(physeq) {
+  sd <- sample_data(physeq)
+  return(as(sd,"data.frame"))
+}
+
+
+# convert the otu_table() within a phyloseq object to a vegan compatible data object
+psotu2veg <- function(physeq) {
+  OTU <- otu_table(physeq)
+  if (taxa_are_rows(OTU)) {
+    OTU <- t(OTU)
+  }
+  return(as(OTU, "matrix"))
+}
+
+
+vegan_otu=psotu2veg(marmo)
+
+vegan_sample=pssd2veg(marmo)
+
+otu_diveristy=diversity(vegan_otu, index = "shannon", MARGIN = 1, base = exp(1))
+
+
+samples=sample_data(marmo)
+
+#add in shannon diversity measure for each sample 
+
+samples$shannon=diversity(vegan_otu, index = "shannon", MARGIN = 1, base = exp(1))
+
+
+#convert input to tibble 
+samples <- as_tibble(samples)
+
+samples%>%levene_test(shannon ~ sample_Genus*ENV_BIOME)
+ 
+  
+
+#set up anova models 
+alpha.m1 = aov(shannon ~ sample_Genus*ENV_BIOME, data=samples)
+summary(alpha.m1)
+alpha.m1
+
+#plot QQ plot
+plot(alpha.m1, which=c(1,2))
+
+
+
+```
+
+```{r PCoA}
+
+marmo.ord <- ordinate(marmo, "PCoA", "bray")
+
+p1 = plot_ordination(marmo, marmo.ord, color="ENV_BIOME", shape="Scientific_name")
+
+
+```
+
+```{r permanova}
+
+set.seed(1)
+
+# Calculate bray curtis distance matrix
+marmoset_bray <- phyloseq::distance(marmo, method = "bray")
+
+#make data frame of sample data 
+sampledf <- data.frame(sample_data(marmo))
+
+#permanova
+m9=adonis2(marmoset_bray~ Scientific_name+ ENV_BIOME, data=sampledf, by="margin")
+m9
+
+
+
+bray.marmo=vegdist(vegan_otu, method="bray")
+sampledf$Scientific_name=as.factor(sampledf$Scientific_name)
+adonis.pair(bray.marmo, sampledf$Scientific_name, nper = 1000, corr.method = "fdr")
+
+
+sampledf$ENV_BIOME=as.factor(sampledf$ENV_BIOME)
+adonis.pair(bray.marmo, sampledf$ENV_BIOME, nper = 1000, corr.method = "fdr")
+
+```
 
