@@ -1,0 +1,19 @@
+#NAME,sample_type,geo_loc_name,Scientific_name,ENV_BIOME
+MLDAfe,Feces ,Afe,Leontopithecus rosalia ,Atlantic Forest
+LrAfef,Feces ,Afe,Leontopithecus rosalia ,Atlantic Forest
+MLDIgar,Feces ,Igar,Leontopithecus rosalia ,Atlantic Forest
+MLDIgua,Feces ,Igua,Leontopithecus rosalia ,Atlantic Forest
+LrRVf,Feces ,RV,Leontopithecus rosalia ,Atlantic Forest
+LrNEs2f,Feces ,NEs,Leontopithecus rosalia ,Atlantic Forest
+LrStH1f,Feces ,StH,Leontopithecus rosalia ,Atlantic Forest
+LrStH2f,Feces ,StH,Leontopithecus rosalia ,Atlantic Forest
+SAfe,Feces ,Afe,Callithrix sp.,Atlantic Forest
+SIgar,Feces ,Igar,Callithrix sp.,Atlantic Forest
+SIgua,Feces ,Igua,Callithrix sp.,Atlantic Forest
+Pool.Rosalia,Fecal swab,CPRJ,Leontopithecus rosalia ,Captivity
+P1,Anal swab,CPB,Callithrix penicillata,Captivity
+P2,Anal swab,CPB,Callithrix penicillata,Captivity
+P3,Anal swab,CPB,Callithrix penicillata,Captivity
+P4,Anal swab,CPB,Callithrix penicillata,Captivity
+P7,Anal swab,CPB,Callithrix penicillata,Captivity
+P8,Anal swab,CPB,Callithrix penicillata,Captivity
