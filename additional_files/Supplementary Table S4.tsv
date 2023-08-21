@@ -1,4 +1,4 @@
-Supplementary Table S4. Listing of significantly differentially abundant functional Metacyc pathways. The 'metadata' column refers to host classification by taxon or environment and corresponds to the 'value' column which can be 'captivity' or 'wild' for 'Host environment' or 'Leontopithecus rosalia' or 'Callithrix' for 'Host Taxon'
+#Supplementary Table S4. Listing of significantly differentially abundant functional Metacyc pathways. The 'metadata' column refers to host classification by taxon or environment and corresponds to the 'value' column which can be 'captivity' or 'wild' for 'Host environment' or 'Leontopithecus rosalia' or 'Callithrix' for 'Host Taxon'
 Feature ID	MetaCyc Pathway Name	General Metacyc Functional Class	metadata	value	coef	stderr	N	N.not.0	pval	qval
 X621	PWY-5154_L-arginine_biosynthesis_III_(via_N-acetyl-L-citrulline)	Amino Acid Biosynthesis	Host Environment	Captivity	0.721704516184638	0.147885540002463	21	7	0.000120415783164962	0.0705636489346679
 X182	FERMENTATION-PWY_mixed_acid_fermentation	Fermentation	Host Environment	Captivity	0.257298594549768	0.076113684377475	21	5	0.00333267666969283	0.149025697539974
