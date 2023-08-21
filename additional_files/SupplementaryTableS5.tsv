@@ -1,0 +1,33 @@
+"Supplementary Table S5. Detailed information (taxonomic classification, completeness, contamination, GC content, genome size, number of contigs, longest contig, N50, number of protein encoding genes, number of 5s RNAs, number of 16S rRNAs, and number of 23S rRNAs ) of all callitrichid metagenome-assembled genomes (MAGs) optimized with the DAC Tool.
+"														
+MAG	Classification	GTBD Classification	Completeness (%)	Contamination (%)	Total GC Content (%)	Genome Size	No of Contigs	Longest Contig	N50	Number of Protein Encoding Genes	Number of 5s RNAs 	Number of 16S rRNAs	Number of tRNAs	Number of 23S rRNAs
+bin.001	Captive marmoset	"d__Bacteria;
+p__Actinobacteriota;
+c__Actinomycetia;
+o__Actinomycetales;
+f__Microbacteriaceae;
+g__Microbacterium;
+s__
+"	68.27	1.77	68.8	1,997,470	331	36,289	6928	2143	0	0	41	0
+bin.002	Captive marmoset	"d__Bacteria;
+p__Proteobacteria;
+c__Gammaproteobacteria;
+o__Enterobacterales;
+f__Enterobacteriaceae;
+g__Serratia;
+s__Serratia marcescens"	93.97	2.75	60.3	4,604,686	469	79,182	12643	4679	0	0	45	0
+bin.003	Captive marmoset	"d__Bacteria;
+p__Proteobacteria;
+c__Gammaproteobacteria;
+o__Pseudomonadales;
+f__Pseudomonadaceae;
+g__Pseudomonas_E;
+s__
+"	38.48	5.27	58.0	3,303,383	790	17,545	4175	3686	1	0	16	0
+bin.004	Captive marmoset	"d__Bacteria;
+p__Firmicutes;
+c__Bacilli;
+o__Lactobacillales;
+f__Lactobacillaceae;
+g__Leuconostoc;
+s__"	47.94	19.3	43.9	2,395,158	773	48,923	2947	2957	1	2	15	3
